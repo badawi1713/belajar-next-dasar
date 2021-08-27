@@ -74,6 +74,34 @@ Menggunakan Link supaya tidak reload halaman ketika berpindah halaman
 - Module css, dapat di-import di file yang terkait dengan style module tersebut, contoh: import styles from '../styles/Home.module.css', `<h1 className={styles['title-homepage']}>`
 - *Catatan untuk module css pada komponen dapat dibuat di folder komponen terkait
 
+### Kustomisasi Halaman 404
+
+- Buatlah komponen halaman di folder pages dengan nama 404.tsx
+- Kemudian definisikan script halaman di file tersebut
+
+### Auto Redirect di Next.js
+
+- Bisa menggunakan useEffect dan untuk Redirectnya setelah beberapa detik, dapat menggunakan fungsi setTimeout
+- Supaya bisa me-redirect ke halaman yang diinginkan, dapat menggunakan useRouter milik next
+- `import {useRouter} from 'next/router'` const router = useRouter(), lalu router.push('/') di dalam fungsi timeout
+
+### Metadata di Next.js
+
+- Untuk mendukung SEO, pada komponen halaman dapat ditambahkan `<title>` sehingga halaman tersebut memiliki judul, beberapa metadata lain yang dapat digunakan ada `<meta name="description" content="..." />`
+- Penggunaan metadata yaitu dengan membungkusnya dengan komponen Head dari Next
+- import Head from 'next/head', `<Head><title>Home Page</title></Head>`
+
+### Optimasi Image
+
+- Pada Next.js, tag `<img/>` dapat diganti dengan komponen `<Image />` bawaan dari Next.js untuk optimasi asset seperti gambar
+- import Image from 'next/image'
+- Image di Next.js juga mendukung lazy load untuk menghemat bandwith
+
+### Route Dinamis
+
+- Untuk file pages yang nantinya akan memiliki sub yang berbeda-beda, misalkan user/1 atau list/2, file pages yang mewakili sub tersebut dapat kita buat dinamis dengan memberikan nama filenya menjadi [id].tsx
+- Untuk mendapatkan path parameter /1 atau /:id, dapat menggunakan const router = useRouter() dari Next.js, const {id} = router.query;
+
 ## Memulai Aplikasi
 
 Menjalankan aplikasi:

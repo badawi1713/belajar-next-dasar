@@ -1,3 +1,17 @@
 .title-homepage {
   color: #2554aa;
 }
+
+.main-container {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+}
+
+.hero {
+  margin: 0 auto;
+}
+
